@@ -109,10 +109,11 @@ class MyLinkedList{
             }
             temp=temp.next;
         }
-        if(Start.data%6==0)
-            Start=Start.next;
+        if(temp.data%6==0)
+            temp=temp.next;
         printlist();
     }
+    //scsc
     public void deletepos(int pos){
         if(pos==1)
             deleteStart();
@@ -158,7 +159,7 @@ class MyLinkedList{
     public void rev(){
         Node current;
         Node previous=null;
-        Node mynext=null;
+        Node mynext;
         current=Start;
         while(current!=null){
             mynext=current.next;
@@ -166,10 +167,12 @@ class MyLinkedList{
             previous=current;
             current=mynext;
         }
-        while(previous!=null){
+        Start=previous;
+        printlist();
+        /*while(previous!=null){
             System.out.println(previous.data);
             previous=previous.next;
-        }
+        }*/
     }
 
 
@@ -183,17 +186,17 @@ public class ooo{
         obj.Insert(40);
         obj.Insert(50);
         obj.Insert(60);
+        obj.Insertpos(100,3);
         obj.printlist();
-        /*obj.Insertpos(100,3);
-        System.out.println("after insertion");
+        /*System.out.println("after insertion");
         obj.printlist();
         obj.deletepos(3);
         System.out.println("after deletion");
-        obj.printlist();
+        obj.printlist();*/
         System.out.println("reverse");
-        obj.rev();*/
-        System.out.println("delete six");
-                obj.delsix();
+        obj.rev();
+        /*System.out.println("delete six");
+                obj.delsix();*/
 
     }
 }
